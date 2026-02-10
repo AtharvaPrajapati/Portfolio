@@ -4,7 +4,6 @@ import profileImage from '../asesst/profile.jpg';
 import resumePDF from '../asesst/resume.pdf';
 
 const Hero = () => {
-  const [displayText, setDisplayText] = useState('');
   const roles = [
     'Full Stack Developer',
     'Frontend Specialist',
@@ -19,7 +18,7 @@ const Hero = () => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [roles.length]);
 
   return (
     <section id="home" className="hero">
